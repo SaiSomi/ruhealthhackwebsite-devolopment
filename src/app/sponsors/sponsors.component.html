@@ -1,0 +1,15 @@
+<br><h3><a routerLink="/" class="routing">RU Health Hack</a>  <span class="destination"> > Sponsorship</span></h3>
+
+<mat-card class="bigcard">
+    <h1>Hackathon Sustainers</h1>
+    <mat-divider>h</mat-divider>
+    <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile
+            *ngFor="let tile of tiles"
+            [colspan]="tile.cols"
+            [rowspan]="tile.rows"
+            [style.background]="tile.color">
+          <img src="{{tile.text}}" class="sponsorImg">
+        </mat-grid-tile>
+      </mat-grid-list>
+</mat-card>

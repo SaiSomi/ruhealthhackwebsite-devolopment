@@ -1,0 +1,169 @@
+<br><h3><a routerLink="/" class="routing">Rutgers Health Hack</a>  <span class="redtext"> > Registration </span></h3>
+<br>
+<mat-card class="bigcard">
+    <img src="../../assets/images/RWJMS1_S_RED.png" class="MSlogo"> <br>
+    <h2>Registration for Rutgers Health Hack</h2>
+    <h3 class="redtext" *ngIf="submitted">APPLICATION SUBMITTED ✅</h3>
+    
+    <form [formGroup]="formRegister" *ngIf="!submitted">
+        <mat-form-field class="txtBasic">
+            <mat-label>E-Mail Verified ✅</mat-label>
+            <input matInput formControlName="email" type="text" [readonly]="true"/>
+        </mat-form-field> <br>
+        <mat-form-field class="txtBasic">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="nameFirst" type="text" maxlength=30 placeholder="First Name" autocomplete="off"/>
+        </mat-form-field>
+        <mat-form-field class="initial">
+            <mat-label>Middle Initial</mat-label>
+            <input matInput formControlName="nameMid" type="text" maxlength=1 placeholder="" autocomplete="off"/>
+        </mat-form-field>
+        <mat-form-field class="txtBasic">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="nameLast" type="text" maxlength=30 placeholder="Last Name" autocomplete="off"/>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="txtBasic">
+            <mat-label>Post-Nominal Degrees/Letters</mat-label>
+            <input matInput formControlName="degrees" type="text" maxlength=30 placeholder="example: MD, MPH, JD..." autocomplete="off"/>
+        </mat-form-field>
+        <mat-form-field class="txtBasic">
+            <mat-label>Preferred Pronouns</mat-label>
+            <input matInput formControlName="pronouns" type="text" maxlength=30 placeholder="she/her..he/him..they/them" autocomplete="off"/>
+        </mat-form-field>
+        <div class="areabox">
+            <h3>Institution</h3>
+        <mat-checkbox formControlName="rutgers" class="areacheck">
+            I am a current student/faculty at Rutgers University <br> <i>not necessary - external applicants welcome</i>
+        </mat-checkbox>
+        <br> <br>
+        <mat-form-field class="txtLong">
+            <mat-label>Your School/Employer</mat-label>
+            <textarea matInput formControlName="institution" type="text" maxlength=60 placeholder="School/Employer" autocomplete="off"></textarea>
+        </mat-form-field> <br>
+        <mat-form-field class="txtLong">
+            <mat-label>Current Role</mat-label>
+            <textarea matInput formControlName="myRole" type="text" maxlength=60 placeholder="Student/Professor/Employee/Exec" autocomplete="off"></textarea>
+        </mat-form-field> <br>
+        <mat-form-field class="txtLong">
+            <mat-label>School/Work Location</mat-label>
+            <input matInput formControlName="location" type="text" maxlength=60 placeholder="City, State" autocomplete="off"/>
+        </mat-form-field>
+        </div>
+        <br><i>this is how it will appear on your nametag:</i>
+            <h3>{{this.formRegister.value.nameFirst}} {{this.formRegister.value.nameMid}} 
+                {{this.formRegister.value.nameLast}} {{this.formRegister.value.degrees}} 
+            </h3>
+            <i>{{this.formRegister.value.pronouns}}</i><br>
+           <b>{{this.formRegister.value.institution}}<br>
+            {{this.formRegister.value.location}} </b>
+        <br><br><br>
+        <div class="areabox">
+            <h3>Demographics</h3>
+            <br>
+            <mat-form-field class="initial">
+                <mat-label>Age</mat-label>
+                <input matInput formControlName="age" type="number" maxlength=2 autocomplete="off"/>
+            </mat-form-field>
+            <mat-form-field class="txtBasic">
+                <mat-label>Contact Phone #(US only)</mat-label>
+                <input matInput formControlName="tele" type="tel" maxlength=13 placeholder="(000)000-0000" autocomplete="off"/>
+            </mat-form-field><br>
+            <mat-form-field class="txtLong">
+                <mat-label>Food/Dietary Restrictions</mat-label>
+                <textarea matInput formControlName="diet" type="text" maxlength=200 
+                    placeholder="Example: kosher / halal / vegan / allergies" autocomplete="off"></textarea>
+            </mat-form-field><br>
+            <i>we will do our best to meet your dietary restrictions but cannot guarantee that all will be met.</i><br><br>
+            <mat-form-field class="txtLong">
+                <mat-label>Highest Level of Education</mat-label>
+                <mat-select formControlName="levelTraining">
+                    <mat-option *ngFor="let edu of eduLevels" [value]="edu" class="txtLong">
+                    {{edu}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field><br>
+           
+                <mat-form-field class="txtLong">
+                    <mat-label>Main Area of Current Focus</mat-label>
+                <mat-select formControlName="myFocus">
+                        <mat-option *ngFor="let focus of mainArea" [value]="focus" class="txtLong">
+                        {{focus}}
+                        </mat-option>
+                </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="txtLong">
+                    <mat-label>What are your areas of strength?</mat-label>
+                    <textarea matInput formControlName="myStrengths" type="text" maxlength=200 
+                    placeholder="List your strengths" autocomplete="off"></textarea>
+                    
+                </mat-form-field>
+                <br> Example Strengths: Hospital Medicine, Graphic Design, <br> Data Analysis, Coding, Startup Development... <br> <br>
+                <mat-form-field class="txtLong">
+                    <mat-label>Primary Country of Citizenship</mat-label>
+                    <mat-select formControlName="citizenship">
+                        <mat-option *ngFor="let country of countries" [value]="country" class="txtLong">
+                        {{country}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-checkbox formControlName="legalHere" class="areacheck">
+                    I am a US citizen or legal permanent resident in the United States or will hold a current legal US visa at the time of the Hackathon event. (November 3rd-5th 2023)
+                </mat-checkbox><br><br>
+                <i>Please Note: Rutgers Health Hack will not sponsor US visas of any kind to attend this event.</i>
+                <br>
+
+
+        </div>
+        
+        <br><br><br>
+        <div class="areabox">
+            <h3>Event Specifics</h3>
+
+            <mat-form-field class="basic">
+                <mat-label>Planned Team Size</mat-label>
+                <input matInput formControlName="teamSize" type="number" maxlength=1 autocomplete="off"/>
+            </mat-form-field> <br>
+            Solos Encouraged! <br> If you do not have a team yet, select (1). We will help facilitate team creation during the event.
+            <br> <br> 
+            <mat-checkbox formControlName="hackedBefore">
+                I have participated in a Hackathon Before    
+            </mat-checkbox>
+        </div><br><br><br>
+        <div class="areabox"> 
+            <h3>Agreements</h3>
+            <br><br>
+            <mat-checkbox formControlName="acceptAgree" class="areacheck">
+                I understand that completing registration does not guarantee acceptance to compete in the Rutgers Health Hack.   
+            </mat-checkbox><br><br>
+            <i>Notifications of acceptance will be E-mailed in early October</i> <br> <br>
+            <mat-checkbox formControlName="attendAgree" class="areacheck">
+                I understand that this event is IN PERSON and I can be physically present in New Brunswick for the dates specified. (Friday Nov 3rd Events are Optional. Check-In by Saturday morning, Nov 4th, required.)   
+            </mat-checkbox><br><br>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="redtext">
+                        Rules/Code of Conduct
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{panelOpenState ? '' : 'Click to View'}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                        <app-card></app-card>
+            </mat-expansion-panel><br><br>
+            <mat-checkbox formControlName="conductAgree" class="areacheck">
+                I have read the rules and code of conduct above. By checking this box and submitting this form I agree to the rules of the Rutgers Health Hack event and will follow the code of conduct.     
+            </mat-checkbox><br><br>
+            <button mat-raised-button color="accent" type="submit" class="submit" [disabled]="formRegister.invalid || submitted" (click)="submitForm()">Submit</button>
+            <br><span class="redtext" *ngIf="formRegister.invalid"><i>Form is incomplete</i></span>
+        </div>
+        
+        &nbsp;
+    </form>
+<br><br>
+ 
+
+</mat-card>

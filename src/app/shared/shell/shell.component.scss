@@ -1,0 +1,157 @@
+
+
+
+
+.logo {
+    max-height:5vh;
+    max-width:40vw;
+    justify-content:center;
+    align-items:center;
+    vertical-align:middle;
+    margin-top:5px;
+    margin-bottom:5px;
+    margin-left:5%;
+    color:rgb(0, 0, 0);
+    font-size:20px;
+      font-weight:lighter;
+      font-family: 'Saira Condensed', sans-serif;
+  }
+
+// .logostrip {
+//     height: vh;
+//     justify-content: center;
+//     align-items: center;
+//     vertical-align: middle;
+//     color: rgb(0, 0, 0); /* Black text */
+//     font-family: 'Saira Condensed', sans-serif;
+//     font-weight: bold;
+//     font-size: xx-large;
+//     background-color: #ffffff; /* White background */
+// }
+
+.spacer {
+    background-color: transparent;
+}
+
+.topbar {
+  height: 10vh; /* Increase the height */
+  background-color: white; /* White background */
+  color: black; /* Black text */
+}
+    
+    .fill-space {
+      width:100%;
+      font-size:20px;
+      
+      font-weight:bold;
+      font-family: 'Saira Condensed', sans-serif;
+      margin-left:2%;
+    }
+  
+    .titlebutton {
+      height: 6vh; /* Increase the height of the logo */
+      max-height: 100%; /* Ensure it scales properly */
+      background-color: #ffffff; /* White background */
+      color: #000000; /* Black text */
+      margin-right: 20px; /* Add some margin to the right */
+  }
+    
+  .buttons {
+    font-size: 23px;
+    font-weight: bold;
+    font-family: 'Saira Condensed', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 5px 15px;
+    position: relative;
+    transition: color 0.3s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.buttons:hover {
+    color: crimson; /* Change text color on hover */
+}
+
+.buttons::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  bottom: 0; /* Align the line at the bottom */
+  left: 0; /* Start the line from the left */
+  background: crimson;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+
+.buttons:hover::after {
+  width: 100%; /* Expand the line to the full width of the button */
+  background: crimson;
+}
+
+
+
+    #container {
+      width: 100%;
+      height: 86vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;   
+      overflow-y:scroll;
+      align-items:center;
+    }
+
+    #container2 {
+      width: 100%;
+      height: 80vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;   
+      overflow-y:scroll;
+      align-items:center;
+    }
+
+.sidenav-container{
+  background-color:transparent !important;
+  align-items:center;
+}
+
+.homecard {
+  margin:3%;
+  background-color: rgba(65, 46, 46, 0.7);
+  color: white;
+  text-align:center;   
+  align-items:center;
+  padding:5%;
+}
+
+
+.mat-raised-button {
+  background-color: #ffffff !important; /* Override any Angular Material styles */
+  color: #000000 !important; /* Black text */
+  border: 1px solid #000000; /* Optional: Add a black border for emphasis */
+}
+
+.register-button {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Saira Condensed', sans-serif;
+  background-color: white;
+  color: #d11c34;
+  padding: 24px 30px;
+  margin-right: auto; /* Align to the left */
+  margin-left: 20px; /* Small margin from the edge */
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Ensure no underline */
+  border: 3px solid #d11c34; /* Remove any border if present */
+}
+
+.register-button:hover {
+  background-color: #d11c34; /* Change to blue on hover */
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+

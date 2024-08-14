@@ -1,0 +1,498 @@
+#video-background-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Adjust this height based on how much space you want the video to occupy */
+    overflow: hidden;
+    z-index: 1; /* Ensures video stays behind content */
+  }
+  
+  #background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Keeps video behind other content */
+  }
+  
+
+    .advertisement-section {
+        position: relative;
+        background-color: #f5f5f5; /* Light gray background */
+        padding: 50px 20px;
+        text-align: center;
+        z-index: 2; /* Ensure content is above the triangle */
+        
+    }
+
+    .triangle-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* Ensure triangles are behind the content */
+    }
+    
+    .triangle-1,
+    .triangle-2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: white; /* Color of the triangles */
+    }
+    
+    .triangle-1 {
+        clip-path: polygon(
+            0 100%,    /* Bottom-left corner */
+            50% 100%,  /* Midpoint at the bottom */
+            50% 30%,   /* Lower midpoint on the Y-axis */
+            100% 30%,  /* Lower on the Y-axis but still touching the right */
+            50% 30%,   /* Repeat the lower midpoint */
+            50% 100%,  /* Midpoint at the bottom */
+            0 70%      /* Lower Y position on the left side */
+        );
+    }
+    
+    .triangle-2 {
+        clip-path: polygon(
+            100% 100%, /* Bottom-right corner */
+            50% 100%,  /* Midpoint at the bottom */
+            50% 30%,   /* Lower midpoint on the Y-axis */
+            0 30%,     /* Lower on the Y-axis but still touching the left */
+            50% 30%,   /* Repeat the lower midpoint */
+            50% 100%,  /* Midpoint at the bottom */
+            100% 70%   /* Lower Y position on the right side */
+        );
+    }
+    
+  
+  .theme-header {
+    background-color: white;
+    padding: 50px 20px 50px; /* Increased padding for more space between sections */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  
+
+  
+  .advertisement-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2; /* Ensure content is above the triangle */
+  }
+  
+  .advertisement-content h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .advertisement-content p {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  
+  .sponsors-section {
+    display: flex;
+    justify-content: space-around; /* Distribute space evenly between logos */
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.sponsor-item {
+    max-width: 200px; /* Set a maximum width for each logo */
+    flex-grow: 1; /* Allow logos to grow to fill available space */
+    text-align: center;
+    margin: 0 30px; /* Add horizontal margin to create space between images */
+
+}
+
+.sponsor-logo {
+    width: 100%;
+    height: auto;
+    max-width: 200px; /* Adjust the maximum width of each logo */
+    transition: transform 0.3s ease;
+}
+
+.sponsor-logo:hover {
+    transform: scale(1.3); /* Slight zoom on hover */
+}
+
+@media (max-width: 768px) {
+    .sponsor-logo {
+        max-width: 120px; /* Adjust the logo size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .sponsors-section {
+        flex-direction: column; /* Stack logos vertically on small screens */
+    }
+    .sponsor-item {
+        margin-bottom: 20px; /* Add space between logos when stacked */
+    }
+}
+
+  
+  .register-button {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Saira Condensed', sans-serif;
+    background-color: white;
+    color: black;
+    padding: 10px 30px;
+    margin-right: auto; /* Align to the left */
+    margin-left: auto; /* Small margin from the edge */
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Ensure no underline */
+    border: 3px solid #d11c34; /* Remove any border if present */
+  }
+  
+  .register-button:hover {
+    background-color: #d11c34; /* Rutgers Red */
+    color: white;
+    border-color: #d11c34;
+  }
+  
+  .theme-header h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .theme-header p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .advertisement-content h1 {
+      font-size: 36px;
+    }
+  
+    .advertisement-content p {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .advertisement-content h1 {
+      font-size: 28px;
+    }
+  
+    .advertisement-content p {
+      font-size: 16px;
+    }
+  }
+  
+
+
+
+.homecard {
+    margin:2%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align:center;   
+    align-items:center;
+    width:100%;
+    max-width:1500px;
+}
+
+
+.MSlogo {
+    height:15vh;
+    padding-bottom:40px;
+}
+
+.locPic {
+    width:700px;
+    max-width:90vw;
+    outline-style:solid;
+    outline-color:white;
+}
+
+.themePic {
+    width:400px;
+    max-width:90vw;
+    outline-style:solid;
+    outline-color:#cc0033;
+    margin:10px;
+}
+
+.container {
+    display:inline-block; 
+}
+
+.container2 {
+    display:flex; 
+}
+
+.container3{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.containerP{
+    max-width:600px;
+    width:95vw;
+    text-align:left !important;
+    text-justify:distribute;
+}
+
+.biopic {
+    margin:10px;
+    min-width:250px;
+    width:17vw;
+    background-color: rgba(48, 48, 48, 1);
+    color: white;
+    display:inline-block; 
+}
+
+.biopic mat-card-content {
+    display:flex
+}
+
+.matimg {
+    width:100%
+}
+
+.icon {
+    margin:5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display:inline-block;
+}
+
+.iconpic {
+    width:15vw;
+    min-width:120px;
+    max-width:200px;
+}
+
+.header {
+    font-size:60px;
+    font-weight:500;
+}
+
+.button {
+    width:30vw;
+    max-width:300px;
+    display:inline-block;
+    margin-inline:3px;
+    margin-bottom:10px;
+}
+
+.routing {
+    margin-left:8vw;
+    color:white;
+}
+.redtext{
+    color:#cc0033;
+}
+
+.brochure {
+    width:900px;
+    max-width:99%;
+    outline-style:solid;
+    outline-color:black;
+    margin-bottom:10px;
+}
+
+.winners {
+    width:1500px;
+    max-width:99%;
+    outline-style:solid;
+    outline-color:black;
+    margin-bottom:10px;
+}
+
+.testimonials-section {
+    text-align: center;
+    color: #333; /* Darker text color for better readability */
+    padding: 50px;
+    background-color: #f7f7f7; /* Light background similar to the theme in the image */
+}
+
+.testimonials-section h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333; /* Darker heading color */
+}
+
+.testimonials-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #666; /* Subtle gray color for the introductory paragraph */
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space evenly between items */
+    gap: 20px; /* Space between the testimonial squares */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.testimonial {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: calc(33.333% - 40px); /* Take up one-third of the row, minus spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 2px solid crimson; /* Red outline for Rutgers theme */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 150px; /* Set a consistent minimum height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Center text within each box */
+    text-align: center; /* Center-align the text */
+}
+
+.testimonial:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(220, 20, 60, 0.3); /* Red shadow on hover for emphasis */
+}
+
+.testimonial-quote {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.testimonial-author {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555; /* Dark gray for author names */
+    text-align: center;
+    margin-top: 10px;
+}
+
+.testimonial-author:hover {
+    color: crimson; /* Turn author names red on hover */
+}
+
+@media (max-width: 768px) {
+    .testimonial {
+        width: calc(50% - 20px); /* Take up half the row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial {
+        width: 100%; /* Take up the full row on small screens */
+    }
+}
+
+.theme-showcase-section {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.theme-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+}
+
+.theme-item {
+    position: relative;
+    width: 25%; /* Each item takes up 25% of the container width */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.theme-item:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.theme-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.theme-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(204, 0, 51, 0.8); /* Rutgers red with transparency */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.theme-item:hover .theme-overlay {
+    opacity: 1;
+}
+
+.theme-text {
+    text-align: center;
+    padding: 20px;
+}
+
+.theme-text h3 {
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.theme-text p {
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .theme-item {
+        width: 50%; /* Two items per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .theme-item {
+        width: 100%; /* One item per row on small screens */
+    }
+}
+
+
+.producer-tag {
+    width: 100%; /* Full width */
+    background-color: crimson; /* Red background */
+    color: white; /* White text */
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box; /* Include padding in width/height */
+    position: static; /* Default position to ensure it's part of the normal content flow */
+    bottom: 0;
+    left: 0;
+    margin-top: 20px; /* Add some space between the content above and the tag */
+  }
+  
+  .producer-logo {
+    width: 40px; /* Adjust width as needed */
+    height: auto;
+    margin-right: 15px; /* Space between image and text */
+  }
+  
+  .producer-text {
+    font-size: 14px;
+    font-family: 'Saira Condensed', sans-serif;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,78 @@
+.routing {
+    margin-left:8vw;
+    color:white;
+}
+.redtext{
+    color:#cc0033;
+}
+
+.bigcard {
+    margin:3%;
+    background-color: rgb(230, 229, 229);
+    color: black; 
+    text-align:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container {
+    display:flex !important;
+    width:100%;
+    align-items:start;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.MSlogo {
+    height:9vh;
+    width:auto;
+}
+
+.txtBasic {
+    width:300px;
+    max-width:90vw;
+    margin:2px;
+}
+.initial {
+    width:150px;
+    max-width:90vw;
+    margin:2px;
+}
+
+.txtLong {
+    width:450px;
+    max-width:85vw;
+    margin:2px;
+}
+
+.areabox {
+    outline:1px;
+    outline-color:gray;
+    outline-style:solid;
+    padding:5px;
+    max-width:85vw!important;
+    align-items:center!important;
+    justify-content:center;
+}
+
+.areaselect {
+    width:80vw;
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+}
+
+.areacheck {
+    outline:1px;
+    outline-color:gray;
+    outline-style:solid;
+    padding:5px;
+    width:800px;
+    max-width:80vw;
+}
+
+.submit {
+    width:100px;
+    height:50px;
+    font-size:large;
+}

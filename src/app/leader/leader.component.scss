@@ -1,0 +1,71 @@
+.bigcard {
+    margin:3%;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: black; 
+    text-align:center;
+}
+
+.container {
+    display:flex !important;
+    width:100%;
+    align-items:start;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.biopic {
+    margin:1%;
+    min-width:350px;
+    width:20vw;
+    color: white;
+    padding:3px;
+    display:inline-block;
+    align-self:flex-start !important;
+    justify-content:center;
+    text-align:left;
+    background-color: rgba(48, 48, 48, 1);
+}
+
+.mentorPic {
+    width:1000px;
+    max-width:90vw;
+    outline-style:solid;
+    outline-color:#cc0033;
+}
+
+.icon {
+    margin:5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display:inline-block;
+}
+
+.iconpic {
+    width:15vw;
+    min-width:120px;
+    max-width:250px;
+}
+
+.header {
+    font-size:70px;
+    font-weight:500;
+}
+
+.button {
+    width:30vw;
+    display:inline-block;
+}
+
+.matimg {
+    width:50vw;
+    max-width:200px;
+    outline-style:groove;
+    outline-color:#cc0033;
+}
+
+.routing {
+    margin-left:8vw;
+    color:white;
+}
+.destination{
+    color:#cc0033;
+}

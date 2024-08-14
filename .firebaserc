@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "ruhealthhackathon": {
+      "hosting": {
+        "RUH": [
+          "ruhealthhackathon"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "ruhealthhackathon"
+  }
+}

@@ -1,0 +1,87 @@
+<br><h3><a routerLink="/" class="routing">Rutgers Health Hack</a>  <span class="redtext"> > User Portal </span></h3>
+<br>
+
+<div class="container">
+    <mat-card class="bigcard" *ngIf="user$ | async as user">
+        <div *ngIf="!this.auth.currentUser.emailVerified">
+            An email verification was sent to : {{this.auth.currentUser.email}} <br> <br>
+            <h3 class="redtext">Registration Not Complete:<br></h3>
+            <br>
+            1. Go to your email inbox and click the link provided to verify your email. (You may have to check your spam folder) <br> <br>
+            2. Come back to ruhealthhack.com to the register/login page (you may need to log in with the email & password you just created) <br> <br>
+            3. If you still see these instructions, click the button below: "Check Verification" <br> <br>
+            4. If your email is successfully verified, a new button will appear: "Proceed to Registration Form" <br> <br>
+            5. Click this link to fill out the entire form and submit. <br> <br>
+            6. We will email you when the completed form has been recieved. <br> <br>
+            <br><button mat-raised-button color="primary" (click)="verifyCheck()" *ngIf="user$ | async">Check Verification</button>
+            <br><button mat-raised-button color="accent" (click)="verifyResend()" *ngIf="user$ | async">Resend Verification Email</button>
+        </div>
+        <div *ngIf="this.auth.currentUser.emailVerified && !closed">
+            <br> <br>
+            {{this.auth.currentUser.email}} Verified ✅<br><br>
+             
+            <span *ngIf="!registered">Registration Incomplete ❌ <br> <br> Click the link below to complete the registration form.</span> <br> <br>
+            <button mat-raised-button routerLink="/register" *ngIf="(user$ | async) && !registered">Proceed to Registration Form</button>
+            <span *ngIf="registered">Registered ✅</span><br><br>
+            <span *ngIf="registered"><i>Please allow 2-3 business days for a confirmation email of your application. 
+                Acceptance notifications will be sent out in mid September 2023.</i></span>
+            
+            <br> <br>
+            <button mat-raised-button color="accent" (click)="auth.signOut(); auth.currentUser.reload(); registered=false" *ngIf="(user$ | async)">Logout</button>
+        </div>
+        <div *ngIf="this.auth.currentUser.emailVerified && closed">
+            <br> <br>
+            {{this.auth.currentUser.email}} Verified ✅<br><br>
+            <span *ngIf="!registered">Registration Incomplete ❌ <br> 
+                <h3>We're Sorry</h3> Registration is now closed for this event. We have reached capacity.</span> <br> <br>
+            <span *ngIf="registered">Registered ✅</span><br><br>
+            <button mat-raised-button color="accent" (click)="auth.signOut(); auth.currentUser.reload(); registered=false" *ngIf="(user$ | async)">Logout</button>
+
+        </div>
+    
+    </mat-card>
+    <br>
+    <br>
+    </div>
+
+<div class="container">
+    <div class="bigcard">
+        <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="redtext">
+                        How Do I Register?
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{panelOpenState ? '' : 'Click to View'}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <h3 class="redtext">How do I register?<br></h3>
+                1. Click "Create New User" to create account & verify email. <br> <br>
+                2. Wait for the email verification and follow the instructions to verify. (May be a few minutes) <br> <br>
+                3. Check back here to ensure that your email is verified. (You may need to log-in again) <br> 
+                <span class="redtext">Email Verification does not mean you have completed registration!</span> <br> <br>
+                4. Click "Proceed to registration" and complete the entire form. <br> <br>
+                5. Click submit.  <br> <br>
+                6. If the portal page says "Registered ✅" you have completed registration. <br> <br>
+                7. You can always log back in here with your email and account password to check your registration status. 
+            </mat-expansion-panel> <br>
+            <button mat-raised-button routerLink="/register" *ngIf="(user$ | async) && !registered && this.auth.currentUser.emailVerified">Proceed to Registration Form</button>
+    </div> <br> <br>  
+</div>
+
+
+
+<div class="container">
+<div *ngIf="!(user$ | async) && showLogin">
+    <app-auth></app-auth>
+</div>
+</div>
+
+
+<div class="container">
+<div class="botbar">
+    <mat-divider></mat-divider> <br> <br>
+    Questions? Contact us at ruhealthhack@gmail.com <br>
+</div>
+</div>
