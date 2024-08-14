@@ -25,7 +25,7 @@
         padding: 50px 20px;
         text-align: center;
         z-index: 2; /* Ensure content is above the triangle */
-        
+        overflow: hidden;
     }
 
     .triangle-container {
@@ -114,6 +114,7 @@
     align-items: center;
     margin-bottom: 40px;
     flex-wrap: wrap; /* Allow wrapping */
+    overflow: hidden;
 }
 
 .sponsor-item {
