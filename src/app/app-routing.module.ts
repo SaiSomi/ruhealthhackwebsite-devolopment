@@ -12,6 +12,7 @@ import { BrochureComponent } from './brochure/brochure.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
+  {path: 'home', component:HomeComponent},
   //{path: 'schedule', component: ScheduleComponent},
   {path: 'leadership', component: LeaderComponent},
   //{path: 'sponsors', component: SponsorsComponent},
@@ -22,7 +23,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { anchorScrolling: 'enabled', scrollOffset: [0, 64] })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

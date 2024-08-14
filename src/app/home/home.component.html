@@ -29,7 +29,7 @@
         </div>
     </div>
   
-      <button class="register-button">Register</button>
+      <button class="register-button">Register Now</button>
       <div class="child-triangle"></div>
     </div>
   </div>
@@ -85,29 +85,27 @@
     </div>
 </div>
 
-
-  <div class="testimonials-section">
+<div id="testimonials-section" class="testimonials-section">
     <h2>What Participants Say</h2>
-    <p>Last year our hackathon has inspired and empowered many. Here’s what some of them had to say!</p>
+    <p>Last year our hackathon inspired and empowered many. Here’s what some of them had to say!</p>
 
     <div class="testimonials-container">
-        <div class="testimonial">
-            <p class="testimonial-quote">"Hackathon was really welcoming and easy to understand as a first-time participant. Our team loved interacting with the mentors—especially Mark Zhang!"</p>
-            <p class="testimonial-author">~Nidhi Salian</p>
-        </div>
-
-        <div class="testimonial">
-            <p class="testimonial-quote">"This hackathon was a great experience!"</p>
-            <p class="testimonial-author">~Keerthi Peruka</p>
-        </div>
-
-        <div class="testimonial">
-            <p class="testimonial-quote">"Awesome experience! Met and collaborated with a lot of people from different backgrounds!"</p>
-            <p class="testimonial-author">~Jin Daniel</p>
+        <div *ngFor="let testimonial of currentTestimonials" class="testimonial">
+            <p class="testimonial-quote">{{ testimonial.quote }}</p>
+            <p class="testimonial-author">{{ testimonial.author }}</p>
         </div>
     </div>
-</div>
 
+    <div class="carousel-controls">
+        <button (click)="previousTestimonials()">Previous</button>
+        <button (click)="nextTestimonials()">Next</button>
+    </div>
+</div>
+  
+  
+  
+  
+  
 
 
 
@@ -294,6 +292,6 @@
     
     
 <div class="producer-tag">
-    <img src="link-to-your-image.png" alt="Production Logo" class="producer-logo">
+    <img src="../../../assets/images/RBHS_REVWHITE.png" alt="Production Logo" class="producer-logo">
     <span class="producer-text">@Rutgers 2024, @RWJMS 2024</span>
   </div>

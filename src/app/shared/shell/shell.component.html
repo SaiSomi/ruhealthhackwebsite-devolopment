@@ -2,69 +2,60 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="false">
+      [opened]="false"
+      position="end">  <!-- This makes the sidenav appear on the right -->
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <!-- <a mat-list-item routerLink="/portal" (click)="drawer.close()"><u>User Portal</u></a> -->
       <a mat-list-item routerLink="/brochure" (click)="drawer.close()">Brochure</a>
-      <!-- <a mat-list-item routerLink="/conduct" (click)="drawer.close()">Code of Conduct</a> -->
-      <a mat-list-item routerLink="/leadership" (click)="drawer.close()">Leadership</a>   
+      <a mat-list-item routerLink="/leadership" (click)="drawer.close()">Leadership</a>
+      <a mat-list-item routerLink="" fragment="themes-section" (click)="drawer.close()">Themes</a>
+      <a mat-list-item routerLink="" fragment="testimonials-section" (click)="drawer.close()">Testimonials</a>
+      <a mat-list-item routerLink="/brochure">Event Details</a>
+      <a mat-list-item routerLink="">Contact Us</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content class="spacer">
-    <mat-toolbar  class="topbar" color="primary">
+
+  <mat-sidenav-content class="spacer" (scroll)="onScroll($event)">
+    <mat-toolbar class="topbar" color="primary">
       <button
+        *ngIf="showSidenavButton"
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        >
+        style="margin-right: auto;"> <!-- Aligns the button to the left -->
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       
       <span routerLink="/" style="display: flex; align-items: center;">
         <img src="../../../assets/images/healthhack.png" alt="Rutgers Health Hack" class="titlebutton" />
         <span style="font-size: 1.5rem; margin-left: 10px;">October 25-27, 2024</span>
-    </span>      <span class="fill-space" *ngIf="!(isHandset$ | async)"></span>
-      <div *ngIf="!(isHandset$ | async)">
+      </span>
+
+      <span class="fill-space" *ngIf="!showSidenavButton"></span>
+      
+      <div *ngIf="!showSidenavButton" class="buttons-container">
         <a mat-button class="buttons" routerLink="/brochure">Event Details</a>
-        <!-- <a mat-button class="buttons" routerLink="/conduct">Rules</a> -->
         <a mat-button class="buttons" routerLink="/leadership">Leadership</a>
-        <a mat-button class="buttons" routerLink="/">Testimonials</a>
-        <a mat-button class="buttons" routerLink="/" fragment="themes-section">Themes</a>
-        <a mat-button class="buttons" routerLimk="/">Contact Us</a>
+        <a mat-button class="buttons" routerLink="" fragment="testimonials-section">Testimonials</a>
+        <a mat-button class="buttons" routerLink="" fragment="themes-section">Themes</a>
+        <a mat-button class="buttons" routerLink="">Contact Us</a>
         <a mat-button class="register-button" routerLink="/register">Register Now</a>
-
-
-        <!-- <a mat-button class="buttons" routerLink="/portal">Register/Login</a> -->
       </div>
-      <!-- <a mat-button routerLink="/register" *ngIf="(isHandset$ | async)">Register/Login</a> <br> -->
-      <a mat-button routerLink="/brochure" *ngIf="(isHandset$ | async)">Event Info</a>
+      
     </mat-toolbar>
-    <!-- <div class="logostrip">
-      <span class="fill-space" *ngIf="!(isHandset$ | async)">New Brunswick, NJ</span>
-      <span class="fill-space" *ngIf="!(isHandset$ | async)">October 25-27, 2024</span>
-       <!-- <span class="logo" *ngIf="!(isHandset$ | async)">In Partnership with:</span> 
-       <img src="../../../assets/images/RBHS_RED_BLACK.png" class="logo"> 
-       <img src="../../../assets/images/RWJBH.png" class="logo"> -->
-    <!-- </div> --> 
 
+    <div id="{{showSidenavButton ? 'container2': 'container'}}" *ngIf="adminAuth">
+      <ng-content></ng-content>
+    </div>
 
-
-    <div id="{{(isHandset$ | async) ? 'container2': 'container'}}" *ngIf=adminAuth><ng-content></ng-content></div>
-    <mat-card class="homecard" *ngIf=!adminAuth>
+    <mat-card class="homecard" *ngIf="!adminAuth">
       <h2>Under Development</h2>
       <br>
-
-          <mat-form-field>
-            <input type="text" matInput [(ngModel)]="pass" (keydown.enter)="pwMatch()">
-          </mat-form-field>
-          <button mat-raised-button class="titlebutton" color="accent" (click)="pwMatch()">Submit</button>
-
-        
+      <mat-form-field>
+        <input type="text" matInput [(ngModel)]="pass" (keydown.enter)="pwMatch()">
+      </mat-form-field>
+      <button mat-raised-button class="titlebutton" color="accent" (click)="pwMatch()">Submit</button>
     </mat-card>
-
   </mat-sidenav-content>
-  
 </mat-sidenav-container>
-

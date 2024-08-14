@@ -30,6 +30,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { BrochureComponent } from './brochure/brochure.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 
 //import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 //import { provideAuth, getAuth } from '@angular/fire/auth';
@@ -49,7 +50,9 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     ScheduleComponent,
     SponsorsComponent,
     CardComponent,
-    BrochureComponent
+    CountdownTimerComponent,
+    BrochureComponent,
+    CountdownTimerComponent
   ],
   imports: [
     BrowserModule,

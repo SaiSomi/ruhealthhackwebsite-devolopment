@@ -1,20 +1,117 @@
-.routing {
-    margin-left:8vw;
-    color:white;
-}
-.redtext{
-    color:#cc0033;
+.brochure-content {
+  text-align: center;
+  padding: 20px;
 }
 
-.container{
-    width:100%;
-    text-align:center;
+.timer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 800px; /* Limit the width for better alignment */
+  margin: 0 auto;
 }
 
-.brochure {
-    width:900px;
-    max-width:99%;
-    outline-style:solid;
-    outline-color:black;
-    margin-bottom:10px;
+.timer-container {
+  background-color: transparent; /* Keep the background transparent */
+  border: 3px solid #d11c34;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.timer-container h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #d11c34;
+  margin-bottom: 20px;
+}
+
+.countdown-timer {
+  font-size: 48px;
+  color: #333;
+  font-weight: bold;
+}
+
+.register-button {
+  background-color: #d11c34;
+  color: white;
+  padding: 20px 80px; /* Keep the padding for the larger button */
+  border-radius: 10px;
+  border: none;
+  font-size: 24px; /* Larger font size */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 10px; /* Reduce the margin to decrease the gap */
+}
+
+.register-button:hover {
+  background-color: #b00f2e;
+}
+
+.details-page {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.event-info h2, .event-info h3 {
+  color: #d11c34;
+  font-weight: bold;
+}
+
+.event-info h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.event-info h3 {
+  margin-top: 40px;
+  font-size: 22px;
+}
+
+.event-info p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.event-info ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #333;
+}
+
+.workflow {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.workflow-image {
+  max-width: 100%;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.logistics {
+  text-align: center;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .timer-wrapper {
+    width: 100%;
+  }
+
+  .register-button {
+    width: 100%;
+    text-align: center;
+  }
 }
