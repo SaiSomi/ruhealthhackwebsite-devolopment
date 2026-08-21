@@ -3,48 +3,222 @@
     <br>
   
     <div class="details-page">
-      <div class="countdown-section">
-        <div class="timer-wrapper">
-          <div class="timer-container">
-            <h4>Countdown to RU Health Hack</h4>
-            <app-countdown-timer></app-countdown-timer>
-          </div>
-          <button class="register-button">Register Now (Application Due Sep 30<sup>th</sup>)</button>
+      <div class="about-timer-container">
+        <!-- About the Event Section -->
+        <div class="about-content">
+          <h2>About the Event!</h2>
+          <p>Join us for the second annual 48-hour Healthcare Hackathon hosted by Rutgers Health and Robert Wood Johnson University Hospital in New Brunswick from October 10–12. This exciting event brings together students, postdocs, young professionals, healthcare experts, and tech enthusiasts interested in innovation, digital solutions, and health systems to tackle pressing healthcare challenges.</p>
+          
+          <p>Participants will collaborate to design and build technology projects from scratch with opportunities for workshops, personalized mentorship, and engaging activities. Building on the success of our inaugural event in 2023, this year's hackathon promises a weekend of creativity where innovation meets impact and serves a meaningful purpose.</p>
         </div>
+  
+        <!-- Timer and Image Section -->
+        <!-- <div class="keynote-container">
+          <mat-card class="keynote-card">
+              <div class="keynote-image-container">
+                  <img src="/assets/images/ira.jpg" alt="Dr. Ira D. Solomon" class="keynote-image">
+              </div>
+              <mat-card-content>
+                  <h2 class="keynote-header">Keynote Speaker - October 25 7:30pm-8pm</h2> <!-- New header for Keynote Speaker -->
+                  <!-- <h3>Dr. Ira D. Solomon, MD, MPH, FACP</h3>
+                  <h4>Chief Safety Officer, Global External Innovation</h4>
+                  <h5>Office of the Chief Medical Officer, Johnson & Johnson</h5>
+                  <p>Dr. Ira D. Solomon joined Johnson & Johnson in 2005 as a Pharmacovigilance Physician to oversee the medical safety of products in the Infectious Disease therapeutic area of the Janssen Pharmaceutical Sector of Johnson & Johnson.</p>
+                  <p>In his current cross-sector role, he serves as the Chief Safety Officer for the Global External Innovation (GEI) Organization, as a part of the Office of the Chief Medical Officer for Johnson and Johnson. He is currently based out of New Brunswick, New Jersey, USA.</p>
+              </mat-card-content>
+          </mat-card>
+      </div> --> 
+      
+  
+        <!-- Schedule of Events Header -->  
+        <!-- Schedule of Events with mat-expansion-panel -->
+<div class="schedule-card scarlet-corners">
+  <h2 class="schedule-title">Schedule</h2>
+
+  <!-- Friday -->
+  <h3 class="day-title">Friday, October 10th</h3>
+  <ul class="events">
+    <li class="event">
+      <div class="time">5:00 PM</div>
+      <div class="detail">
+        <div class="title">Registration & Kick Off Dinner</div>
+        <div class="note">Enter through 1 Robert Wood Johnson Place — Robert Wood Johnson University Hospital Entrance</div>
       </div>
-  
-      <div class="event-info">
-        <h2>UNTIL RUTGERS HEALTH HACKATHON 2024!</h2>
-  
-        <section class="speakers">
-          <h3>SPEAKERS</h3>
-          <p>Coming Soon...</p>
-        </section>
-  
-        <section class="mentors">
-          <h3>MENTORS (Idea: A photo collage with Mentors Expertise as Cloud)</h3>
-          <p>Coming Soon...</p>
-        </section>
-  
-        <section class="expectations">
+    </li>
+
+    <li class="event">
+      <div class="time">6:00 PM</div>
+      <div class="detail">
+        <div class="title">Keynote Address</div>
+        <div class="location">RWJUH Atrium</div>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="time">7:00 PM</div>
+      <div class="detail">
+        <div class="title">Networking Session with Leadership</div>
+        <div class="location">RWJUH Atrium</div>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="time">8:00 PM</div>
+      <div class="detail">
+        <div class="title">Team Registration / Hacking Begins</div>
+        <div class="location">RWJUH Atrium</div>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Saturday -->
+  <h3 class="day-title">Saturday, October 11th</h3>
+  <ul class="events">
+    <li class="event">
+      <div class="time">All Day</div>
+      <div class="detail">
+        <div class="title">Hacking Continues</div>
+        <div class="note"><em>Mentoring sessions available 8:00 AM – 5:00 PM</em></div>
+        <div class="location">MEB, Atrium, Innovation Center</div>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="time">10:00 AM</div>
+      <div class="detail">
+        <div class="title">Amazon Workshop</div>
+        <div class="location">MEB Lecture Hall</div>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="time">11:00 AM</div>
+      <div class="detail">
+        <div class="title">Oracle Workshop</div>
+        <div class="location">MEB Lecture Hall</div>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="time">1:00 PM</div>
+      <div class="detail">
+        <div class="title">Technology IP / Transfer Workshop</div>
+        <div class="location">MEB Lecture Hall</div>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="time">2:00 PM</div>
+      <div class="detail">
+        <div class="title">Venture Capital for Start Ups Workshop</div>
+        <div class="location">MEB Lecture Hall</div>
+      </div>
+    </li>
+  </ul>
+
+  <!-- Sunday -->
+  <h3 class="day-title">Sunday, October 12th</h3>
+  <ul class="events">
+    <li class="event">
+      <div class="time">AM Session</div>
+      <div class="detail">
+        <div class="title">Project Finalization & Preparing for Submission</div>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="time">12:00 PM</div>
+      <div class="detail">
+        <div class="title">Project Presentations & Submissions Due</div>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="time">1:00 PM</div>
+      <div class="detail">
+        <div class="title">Track Specific Presentations / Judging</div>
+      </div>
+    </li>
+
+    <li class="event">
+      <div class="time">5:00 PM</div>
+      <div class="detail">
+        <div class="title">Award Ceremony & Closing Remarks</div>
+        <div class="location">Atrium</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+        <div class="images-container">
+          <img src="/assets/images/1A.jpg" alt="Image 1" class="side-image">
+          <img src="/assets/images/1B.jpg" alt="Image 2" class="side-image">
+        </div>
+        <!-- What to Expect Section -->
+        <div class="expect-section">
           <h3>What to Expect?</h3>
-          <p>At the 48-hour Healthcare Hackathon, participants will dive into an immersive...</p>
+          <p>At the 48-hour Healthcare Hackathon, participants will dive into an immersive and collaborative experience. You can look forward to:</p>
           <ul>
-            <li>Innovative Challenges: Tackle pressing healthcare issues...</li>
-            <li>Team Collaboration: Work in teams to brainstorm...</li>
+            <li><strong>Innovative Challenges:</strong> Tackle pressing healthcare issues with creative, tech-driven solutions.</li>
+            <li><strong>Team Collaboration:</strong> Work in teams to brainstorm, design, and build technology projects from scratch.</li>
+            <li><strong>Mentorship:</strong> Participate in meetings led by industry experts and receive personalized guidance from these mentors.</li>
+            <li><strong>Engaging Activities:</strong> Take part in interactive showcase activities with technology giants that offer a break from coding and foster networking and collaboration.</li>
           </ul>
-        </section>
+          <p><strong>Technology Resources:</strong> We will provide datasets for hacking during the event. Stay tuned for exactly which cloud resources will be made available and for information/instructions on how to use these resources from our technology partners including Microsoft, Amazon Web Services, and Oracle.</p>
+          <p class="expect-highlight">Prepare for a weekend filled with creativity, problem-solving, and impactful innovation!</p>
+        </div>
   
-        <section class="workflow">
-          <h3>Prepare for a weekend filled with creativity, problem-solving, and impactful innovation!</h3>
-          <img src="assets/images/1A.jpg" alt="Workflow 1" class="workflow-image">
-          <img src="assets/images/1B.jpg" alt="Workflow 2" class="workflow-image">
-        </section>
-  
-        <section class="logistics">
-          <h3>Hotels, Logistics & Other Event Details</h3>
-          <p>Coming soon ...</p>
-        </section>
+        <!-- Logistics Section -->
+        <div class="logistics">
+          <h3>Parking Details and Hotel Information</h3>
+          <p>Parking decks are available 24/7 for visitors and guests:</p>
+          <ul>
+            <li>Main Hospital Parking Deck</li>
+            <li>Plum Street Parking Deck</li>
+            <li>Paterson Street Parking Deck</li>
+          </ul>
+        </div>
+        <div class="hotel-cards-container">
+          <mat-card class="hotel-card">
+            <mat-card-header class="hotel-card-header">
+              <mat-card-title>The Heldrich Hotel & Conference Center</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>10 Livingston Ave, New Brunswick, NJ</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <a mat-button class="book-now-button" href="https://www.theheldrich.com/?&utm_source=GoogleMyBusiness&utm_medium=organic&utm_campaign=GMB&utm_term=held" target="_blank">Book Now</a>
+            </mat-card-actions>
+          </mat-card>
+        
+          <mat-card class="hotel-card">
+            <mat-card-header class="hotel-card-header">
+              <mat-card-title>Hyatt Regency New Brunswick</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>Two Albany St, New Brunswick, NJ</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <a mat-button class="book-now-button" href="https://www.hyatt.com/hyatt-regency/en-US/ewrrn-hyatt-regency-new-brunswick?%3Fsrc=corp_lclb_google_seo_ewrrn&%3Futm_source=google&utm_medium=organic&utm_campaign=lmr" target="_blank">Book Now</a>
+            </mat-card-actions>
+          </mat-card>
+        
+          <mat-card class="hotel-card">
+            <mat-card-header class="hotel-card-header">
+              <mat-card-title>Rutgers University Inn and Conference Center</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <p>178 Ryders Ln, New Brunswick, NJ</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <a mat-button class="book-now-button" href="https://inn.rutgers.edu/" target="_blank">Book Now</a>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+        
+        
+        
       </div>
     </div>
   </div>

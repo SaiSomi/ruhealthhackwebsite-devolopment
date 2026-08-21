@@ -1,50 +1,212 @@
 <div id="video-background-container">
-    <video autoplay muted loop id="background-video" preload="auto" oncanplay="this.play()" onloadedmetadata="this.muted = true">
-      <source src="assets/videos/RHH 2024 Final2.mp4" type="video/mp4">
-      Your browser does not support the video tag.
+    <video 
+        autoplay 
+        muted 
+        loop 
+        playsinline 
+        id="background-video" 
+        preload="auto" 
+        oncanplay="this.play()" 
+        onloadedmetadata="this.muted = true">
+        <source src="assets/videos/RHH 2024 Premiere Banner.mp4" type="video/mp4">
+        Your browser does not support the video tag.
     </video>
-  </div>
+</div>
 
-<div class="advertisement-section">
+<div class="sponsor-section">
     <div class="triangle-container">
         <div class="triangle-1"></div>
         <div class="triangle-2"></div>
     </div>
-    <div class="advertisement-content">
-        <h1>2024 Rutgers Healthcare Hackathon</h1>
-        <p>Join the Rutgers Health Hackathon and be a part of revolutionizing healthcare. Collaborate, innovate, and create solutions that will shape the future of healthcare.</p>
+    <div class="sponsor-content">
+        <h1>2025 Rutgers Healthcare Hackathon</h1>
+        <p>Come join us on Oct 10-12, 2025 for the Rutgers Health Hack 2025 at Robert Wood Johnson University Hospital and Rutgers Robert Wood Johnson Medical School in New Brunswick, NJ. We are excited to have cloud computing, AI, LLM, and many other resources and technology support from industry leaders including Amazon Web Services, Oracle, Microsoft, Nokia Bell Labs, Google Cloud, and Sevaro. No prior hacking experience necessary. Event is open to all including medical sciences, computer science, engineering, business, administration, design, law, and policy.</p>
 
         <div class="sponsors-section">
-        <div class="sponsor-item">
-            <img src="assets/images/awslogo.png" alt="aws" class="sponsor-logo">
-        </div>
-        <div class="sponsor-item">
-            <img src="assets/images/oraclelogo.png" alt="oracle" class="sponsor-logo">
-        </div>
-        <div class="sponsor-item">
-            <img src="assets/images/micrologo.png" alt="microsoft" class="sponsor-logo">
-        </div>
-        <div class="sponsor-item">
-            <img src="assets/images/nokialogo.png" alt="nokia" class="sponsor-logo">
-        </div>
+            <div class="sponsor-item">
+                <a href="https://aws.amazon.com" target="_blank">
+                    <img src="assets/images/logo1.png"  class="sponsor-logo">
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://www.oracle.com" target="_blank">
+                    <img src="assets/images/logo2.png" class="sponsor-logo">
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://www.microsoft.com" target="_blank">
+                    <img src="assets/images/logo3.png" class="sponsor-logo">
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://www.bell-labs.com/" target="_blank">
+                    <img src="assets/images/logo4.png" class="sponsor-logo">
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://sevaro.com/" target="_blank">
+                    <img src="assets/images/logo-teal-brain-hor-black-sevaro.png" class="sponsor-logo">
+                </a>
+            </div>
+            <div class="sponsor-item">
+                <a href="https://cloud.google.com/?hl=en" target="_blank">
+                    <img src="assets/images/gcloud.png" class="sponsor-logo">
+                </a>
+            </div>
+
+
+            <!-- <div class="sponsor-item"> -->
+                <!-- <a href="https://www.bell-labs.com/" target="_blank"> -->
+                    <!-- <img src="assets/images/logo4.png" class="sponsor-logo"> -->
+                <!-- </a> -->
+            <!-- </div> -->
+</div>
+<div class="new-sponsor-image">
+    <img src="/assets/images/prizeslogo.png" class="new-sponsor-logo">
+</div>
+    <!-- <button class="register-button" routerLink="/portal">
+        <span class="default-text">Registration Closing Soon!</span>
+        <app-register-cta></app-register-cta>
+        <span class="hover-text">Click Here!</span>
+    </button>    
+    <div class="child-triangle"></div> -->
+</div>
+</div>
+<div class="keynote-container">
+  <mat-card class="keynote-card scarlet-corners">
+    <div class="keynote-content">
+      <div class="keynote-image-wrap">
+        <!-- replace src with your actual path -->
+        <img
+          src="/assets/images/jaredsaul.jpg"
+          alt="Dr. Jared Saul"
+          class="keynote-image"
+          loading="lazy"
+        />
+      </div>
+
+      <mat-card-content>
+        <h2 class="keynote-header">Keynote Speaker – October 10, 6:00 PM</h2>
+        <h3 class="keynote-name">Dr. Jared Saul, MD</h3>
+        <h4 class="keynote-title">Chief Medical Officer, AWS</h4>
+
+        <p class="keynote-bio">
+          Dr. Saul serves as the Chief Medical Officer for commercial healthcare and life sciences at
+          Amazon Web Services (AWS) where he is focused on working with customers and partners to apply
+          Amazon’s technology to advance human health. Before joining AWS, Dr. Saul practiced
+          neuroradiology and pursued various startup ventures, eventually transitioning from clinical
+          practice to fully pursue his entrepreneurial interests in roles such as founder, CTO, advisor,
+          and investor.
+        </p>
+        <p class="keynote-bio">
+          Dr. Saul earned his medical degree from the University of Medicine and Dentistry of New Jersey,
+          completed a radiology residency there, and then did a neuroradiology fellowship at the University
+          of Arizona. He currently resides in New Jersey with his wife and two sons.
+        </p>
+      </mat-card-content>
+    </div>
+  </mat-card>
 </div>
 
-    <button class="register-button">Register Now</button>
-    <div class="child-triangle"></div>
-</div>
-</div>
-  
+
+
+
+
+<!-- HACKATHON TRACKS -->
+<!-- HACKATHON TRACKS -->
+<section class="tracks-section" aria-label="Hackathon Tracks">
+  <!-- Header -->
   <div class="theme-header">
-    <h2 style="font-size: 48px; font-weight: bold;">Discover Our 2024 Hackathon Themes!</h2>
-    <p style="font-size: 20px; color: #666;">Explore the themes that drive our hackathon, designed to address critical challenges in healthcare.</p>
+    <h2 class="headline">Discover Our 2025 Hackathon Tracks</h2>
+    <p class="tagline">Explore the tracks that drive our hackathon, designed to tackle real challenges in healthcare. Each track will have its specific challenges.</p>
   </div>
+
+  <!-- Tracks Grid -->
+  <div class="tracks-grid">
+    <!-- 1) Rutgers – Women’s Health -->
+    <article class="track-card" tabindex="0" aria-labelledby="track-rutgers">
+      <span class="focus-ring"></span>
+      <div class="track-media">
+        <img src="assets/images/wtech.PNG" alt="Rutgers logo" class="track-logo" />
+      </div>
+      <div class="track-body">
+        <div class="track-chips">
+          <span class="chip chip-rutgers">Rutgers</span>
+        </div>
+        <h3 id="track-rutgers" class="track-title">Women’s Health Challenge</h3>
+        <p class="track-desc">
+          Build solutions that improve Women's health, screening, remote monitoring, and equitable access to health services.
+        </p>
+      </div>
+      <footer class="track-footer">Clinical mentors • Patient impact • Equity</footer>
+    </article>
+
+    <!-- 2) AWS – MedEd -->
+    <article class="track-card" tabindex="0" aria-labelledby="track-aws">
+      <span class="focus-ring"></span>
+      <div class="track-media">
+        <img src="assets/images/aws.jpeg" alt="AWS logo" class="track-logo" />
+      </div>
+      <div class="track-body">
+        <div class="track-chips">
+          <span class="chip chip-aws">AWS</span>
+        </div>
+        <h3 id="track-aws" class="track-title">MedEd Challenge</h3>
+        <p class="track-desc">
+          Design AI tools for medical education—adaptive cases such as skills assessment, and competency dashboards.
+        </p>
+      </div>
+      <footer class="track-footer">GenAI • Simulation • Real-time feedback</footer>
+    </article>
+
+    <!-- 3) RWJUH – App Building -->
+    <article class="track-card" tabindex="0" aria-labelledby="track-rwjuh">
+      <span class="focus-ring"></span>
+      <div class="track-media">
+        <img src="assets/images/rwjbh.jpg" alt="Robert Wood Johnson University Hospital logo" class="track-logo" />
+      </div>
+      <div class="track-body">
+        <div class="track-chips">
+          <span class="chip chip-rwjuh">RWJUH</span>
+        </div>
+        <h3 id="track-rwjuh" class="track-title">App Building Challenge</h3>
+        <p class="track-desc">
+          Build workflow-ready apps for hospital operations, care coordination, and patient experience with deployment in mind.
+        </p>
+      </div>
+      <footer class="track-footer">Hospital ops • Interop • Piloting paths</footer>
+    </article>
+
+    <!-- 4) Sevaro – TBD -->
+    <article class="track-card" tabindex="0" aria-labelledby="track-sevaro">
+      <span class="focus-ring"></span>
+      <div class="track-media">
+        <img src="assets/images/sev.jpeg" alt="Sevaro logo" class="track-logo" />
+      </div>
+      <div class="track-body">
+        <div class="track-chips">
+          <span class="chip chip-sevaro">Sevaro</span>
+        </div>
+        <h3 id="track-sevaro" class="track-title">Sevaro Track</h3>
+        <p class="track-desc">
+          Partner track with Sevaro. Official problem statements and resources will be announced shortly.
+        </p>
+      </div>
+      <footer class="track-footer">Partner mentors • Real use cases</footer>
+    </article>
+  </div>
+</section>
+
+
+
+
   
   
   
-<div class="theme-showcase-section" id="themesection">
+<!-- <div class="theme-showcase-section" id="themesection">
     <div class="theme-container">
-        <div class="theme-item">
-            <img src="assets/images/GlobalHealth_whitefont.jpg" alt="Global Health" class="theme-image">
+        <div class="theme-item" routerLink="/">
+            <img src="assets/images/GlobalHealth_whitefont.jpg" alt="Global Health" class="theme-image" >
             <div class="theme-overlay">
                 <div class="theme-text">
                     <h3>Global Health</h3>
@@ -54,7 +216,7 @@
         </div>
 
         <div class="theme-item">
-            <img src="assets/images/IIME_whitefont-model2.jpg" alt="Innovation in Medical Education" class="theme-image">
+            <img src="assets/images/IIME_whitefont.jpg" alt="Innovation in Medical Education" class="theme-image">
             <div class="theme-overlay">
                 <div class="theme-text">
                     <h3>Innovation in Medical Education</h3>
@@ -83,8 +245,90 @@
             </div>
         </div>
     </div>
+</div> -->
+<div class="leader-section">
+    <h2>Video Resources and Insights from our Leaders</h2>
+    <div class="leader-videos">
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/7Zuzk54nZh4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/LqH819GyxMo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">     
+            <iframe src="https://www.youtube.com/embed/TfDYb7vvUGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">    
+            <iframe src="https://www.youtube.com/embed/6fyLn3jaCFo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video-container">    
+            <iframe src="https://www.youtube.com/embed/pG2Rx6gIeig" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
 </div>
 
+<div class="financial-sponsors-section">
+    <h2 class="financial-sponsors-header">Special Thanks to our Financial Sponsors</h2>
+    <div class="financial-sponsors-container">
+        <div class="financial-sponsor-item">
+            <img src="assets/images/RWJMS1_S_RED.png" alt="Sponsor 1" class="financial-sponsor-logo">
+        </div>
+        <div class="financial-sponsor-item">
+            <img src="assets/images/RH_H_2LINE_RED_BLACK_CMYK.png" alt="Sponsor 2" class="financial-sponsor-logo">
+        </div>
+        <div class="financial-sponsor-item">
+            <img src="assets/images/RWJBH.png" alt="Sponsor 3" class="financial-sponsor-logo">
+        </div>
+        <div class="financial-sponsor-item">
+            <img src="assets/images/RWJMSDM_RED_BLACK.png" alt="Sponsor 4" class="financial-sponsor-logo">
+        </div>
+        <div class="financial-sponsor-item">
+            <img src="assets/images/officeresearch1.png" alt="Sponsor 5" class="financial-sponsor-logo">
+        </div>
+        <div class="financial-sponsor-item">
+            <img src="assets/images/oitrutty.png" alt="Sponsor 5" class="financial-sponsor-logo">
+        </div>
+        <div class="financial-sponsor-item">
+            <img src="assets/images/FHA.png" alt="Sponsor 5" class="financial-sponsor-logo">
+        </div>
+        <div class="financial-sponsor-item">
+            <img src="assets/images/logo4.png" alt="Sponsor 5" class="financial-sponsor-logo">
+        </div>
+        <div class="financial-sponsor-item">
+            <img src="assets/images/logo1.png" alt="Sponsor 5" class="financial-sponsor-logo">
+        </div>
+                <div class="financial-sponsor-item">
+            <img src="assets/images/sev_logo.png" alt="Sponsor 5" class="financial-sponsor-logo">
+        </div>
+    </div>
+    <div class="collaborators-section">
+        <h2 class="collaborators-header">Special Thanks to Our Collaborators</h2>
+        <div class="collaborators-container">
+            <div class="collaborator-item">
+                <img src="assets/images/RBS.jpg" alt="Collaborator 1" class="collaborator-logo">
+            </div>
+            <div class="collaborator-item">
+                <img src="assets/images/cancer.png" alt="Collaborator 2" class="collaborator-logo">
+            </div>
+            <div class="collaborator-item">
+                <img src="assets/images/foundation.png" alt="Collaborator 3" class="collaborator-logo">
+            </div>
+            <div class="collaborator-item">
+                <img src="assets/images/NJMS.png" alt="Collaborator 4" class="collaborator-logo">
+            </div>
+            <div class="collaborator-item">
+                <img src="assets/images/j&j.jpg" alt="Collaborator 5" class="collaborator-logo">
+            </div>
+            <div class="collaborator-item">
+                <img src="assets/images/bamm.jpg" alt="Collaborator 5" class="collaborator-logo">
+            </div>
+            <div class="collaborator-item">
+                <img src="assets/images/spezi.png" alt="Collaborator 1" class="collaborator-logo">
+            </div>
+        </div>
+    </div>
+    
+</div>
 <div id="testimonials-section" class="testimonials-section">
     <h2>What Participants Say</h2>
     <p>Last year our hackathon inspired and empowered many. Here’s what some of them had to say!</p>
@@ -293,5 +537,5 @@
     
 <div class="producer-tag">
     <img src="assets/images/RBHS_REVWHITE.png" alt="Production Logo" class="producer-logo">
-    <span class="producer-text">@Rutgers 2024, @RWJMS 2024</span>
+    <span class="producer-text">@Rutgers 2025, @RWJMS 2025</span>
   </div>

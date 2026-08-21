@@ -1,0 +1,103 @@
+.mentors-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.bigcard {
+    margin: 3%;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.mentor-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.mentor-card {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid crimson; /* Red outline */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 250px; /* Square card dimensions */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mentor-card:hover {
+    transform: translateY(-5px);
+}
+
+.mentor-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.mentor-details {
+    text-align: center;
+}
+
+.mentor-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.mentor-title {
+    font-size: 16px;
+    margin: 5px 0 10px;
+}
+
+.mentor-description {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.linkedin-icon {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .mentor-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mentor-card {
+        width: 95%; /* Adjusted width for smaller screens */
+    }
+}
+
+.mentor-banner {
+    background: linear-gradient(90deg, #ffefef, #ffeaea);
+    border: 1px solid #f8caca;
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin: 20px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d63434;
+    box-shadow: 0 4px 10px rgba(255, 102, 102, 0.15);
+    text-align: center;
+}
+
+.mentor-banner-year {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #b30000;
+}

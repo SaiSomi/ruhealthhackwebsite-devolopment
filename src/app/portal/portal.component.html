@@ -1,5 +1,6 @@
 <br><h3><a routerLink="/" class="routing">Rutgers Health Hack</a>  <span class="redtext"> > User Portal </span></h3>
-<br>
+
+<h2 style="text-align: center; font-size: 2rem; font-weight: bold; margin-bottom: 0;">Please note that this is an In-Person Event only</h2>
 
 <div class="container">
     <mat-card class="bigcard" *ngIf="user$ | async as user">
@@ -33,7 +34,7 @@
             <br> <br>
             {{this.auth.currentUser.email}} Verified ✅<br><br>
             <span *ngIf="!registered">Registration Incomplete ❌ <br> 
-                <h3>We're Sorry</h3> Registration is now closed for this event. We have reached capacity.</span> <br> <br>
+                </span> <br> <br>
             <span *ngIf="registered">Registered ✅</span><br><br>
             <button mat-raised-button color="accent" (click)="auth.signOut(); auth.currentUser.reload(); registered=false" *ngIf="(user$ | async)">Logout</button>
 

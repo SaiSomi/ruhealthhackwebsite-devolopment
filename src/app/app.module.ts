@@ -13,7 +13,7 @@ import { ScheduleComponent } from './schedule/schedule.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
 import { SharedModule } from './shared/shared.module';
 import { CardComponent } from './card/card.component';
-
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';  // Import LeafletModule
 import { MatDividerModule } from '@angular/material/divider';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
@@ -31,12 +31,20 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { BrochureComponent } from './brochure/brochure.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
-
+import { GlobalComponent } from './globalhealth/globalhealth.component';
+import { PatientComponent } from './patientoutcomes/patientoutcomes.component';
+import { HospitalComponent} from './hospitaloperational/hospitaloperational.component';
+import { InnovationComponent } from './iime/iime.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { FaqComponent } from './faq/faq.component';
+import { MentorsComponent } from './mentors/mentors.component';
+import { ResourcesComponent } from './resources/resources.component';
 //import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 //import { provideAuth, getAuth } from '@angular/fire/auth';
 //import { provideDatabase,getDatabase } from '@angular/fire/database';
 //import { environment } from '../environments/environment';
 //import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +60,15 @@ import { CountdownTimerComponent } from './countdown-timer/countdown-timer.compo
     CardComponent,
     CountdownTimerComponent,
     BrochureComponent,
-    CountdownTimerComponent
+    CountdownTimerComponent,
+    GlobalComponent,
+    PatientComponent,
+    HospitalComponent,
+    InnovationComponent,
+    ContactusComponent,
+    FaqComponent,
+    MentorsComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,

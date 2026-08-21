@@ -1,28 +1,19 @@
 @media (max-width: 768px) {
-  .mat-toolbar {
-    justify-content: flex-start; /* Aligns all items to the left */
-    padding-left: 10px; /* Adds some padding to move items slightly away from the edge */
-  }
-
-  .mat-toolbar .titlebutton,
-  .mat-toolbar .mat-icon-button {
-    margin-right: 0; /* Remove any right margin */
-    margin-left: 0; /* Ensure no left margin so it stays at the edge */
+  .date-text {
+    display: none; /* Hide the date text on smaller screens */
   }
 
   .mat-toolbar span[routerLink] {
-    flex-grow: 1; /* Make the logo and date span take up available space */
+    flex-grow: 1; /* Make the logo span take up available space */
     display: flex;
     justify-content: flex-start; /* Align content to the left within the span */
     align-items: center;
   }
 
-  .fill-space {
-    display: none; /* Hide the fill space so the items are aligned left */
-  }
-
-  /* Additional padding to align logo and text to the left */
+  /* Adjust logo size for smaller screens */
   .titlebutton {
+    height: 5vh; /* Decrease the height of the logo */
+    max-height: 100%; /* Ensure it scales properly */
     margin-left: 10px; /* Adds some left margin for better spacing */
   }
 
@@ -34,6 +25,22 @@
     margin-left: auto; /* Align the menu button to the right */
   }
 }
+
+@media (max-width: 480px) {
+  .date-text {
+    display: none; /* Ensure the date text is hidden on very small screens */
+  }
+
+  .titlebutton {
+    height: 4vh; /* Further decrease the height of the logo */
+    max-height: 100%;
+    margin-left: 5px; /* Reduce the left margin further for very small screens */
+  }
+}
+
+
+
+
 
 
 .sidenav-container {
@@ -174,17 +181,36 @@
   background-color: white;
   color: #d11c34;
   padding: 24px 30px;
-  margin-right: auto; /* Align to the left */
-  margin-left: 20px; /* Small margin from the edge */
+  margin-right: auto;
+  margin-left: 20px;
   transition: background-color 0.3s ease;
-  text-decoration: none; /* Ensure no underline */
-  border: 3px solid #d11c34; /* Remove any border if present */
+  text-decoration: none;
+  border: 3px solid #d11c34;
+  position: relative; /* Necessary for absolute positioning of spans */
+}
+
+.register-button .hover-text {
+  display: none;
+}
+
+.register-button .default-text {
+  display: inline;
 }
 
 .register-button:hover {
-  background-color: #d11c34; /* Change to blue on hover */
-  text-decoration: none; /* Ensure no underline on hover */
+  background-color: #d11c34;
+  text-decoration: none;
+  color: white;
 }
+
+.register-button:hover .hover-text {
+  display: inline;
+}
+
+.register-button:hover .default-text {
+  display: none;
+}
+
 
 
 .producer-tag {

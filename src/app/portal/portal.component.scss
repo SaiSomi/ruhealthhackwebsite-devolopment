@@ -1,35 +1,36 @@
 .bigcard {
-    margin:3%;
+    margin: 3%;
     background-color: rgb(230, 229, 229);
     color: black; 
-    text-align:center;
-    padding:20px;
-    width:500px;
-    max-width:95vw;
+    text-align: center;
+    padding: 20px;
+    width: 500px;
+    max-width: 95vw;
 }
 
 .container {
-    display:flex !important;
-    width:100%;
-    align-items:start;
-    flex-wrap:wrap;
-    justify-content:center;
+    display: flex !important;
+    width: 100%;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
 
 .botbar {
-    color:white;
-    display:flex !important;
-    width:96%;
-    align-items:start;
-    flex-wrap:wrap;
-    justify-content:center;
-    margin:2%;
+    color: black;
+    display: flex !important;
+    width: 96%;
+    align-items: start;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2%;
 }
+
 .routing {
-    margin-left:8vw;
-    color:white;
+    margin-left: 8vw;
+    color: black;
 }
-.redtext{
-    color:#cc0033;
+
+.redtext {
+    color: #cc0033;
 }

@@ -17,8 +17,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
-
-
+import { RegisterCtaComponent } from '../register-cta/register-cta.component';
 
 const components = [ShellComponent];
 
@@ -40,7 +39,8 @@ const modules = [
   MatGridListModule,
   MatTooltipModule,
   MatProgressSpinnerModule,
-  FormsModule
+  FormsModule,
+  RegisterCtaComponent
 ];
 
 

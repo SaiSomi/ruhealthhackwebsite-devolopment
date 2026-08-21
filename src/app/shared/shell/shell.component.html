@@ -6,12 +6,19 @@
       position="end">  <!-- This makes the sidenav appear on the right -->
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/brochure" (click)="drawer.close()">Brochure</a>
       <a mat-list-item routerLink="/leadership" (click)="drawer.close()">Leadership</a>
-      <a mat-list-item routerLink="" fragment="themes-section" (click)="drawer.close()">Themes</a>
-      <a mat-list-item routerLink="" fragment="testimonials-section" (click)="drawer.close()">Testimonials</a>
+      <a mat-list-item routerLink="/home">Home</a>
+
+      <!-- <a mat-list-item routerLink="" fragment="themes-section" (click)="drawer.close()">Themes</a> -->
       <a mat-list-item routerLink="/brochure">Event Details</a>
-      <a mat-list-item routerLink="">Contact Us</a>
+      <a mat-list-item routerLink="/faq">FAQs</a>
+      <a mat-list-item routerLink="/mentors">Mentors</a>
+
+      <!-- <a mat-list-item routerLink="/contactus">Contact Us</a> -->
+      <a mat-list-item routerLink="/resources">Resources</a>
+      <a mat-list-item routerLink="/portal">Register</a>
+
+
     </mat-nav-list>
   </mat-sidenav>
 
@@ -28,20 +35,31 @@
       </button>
       
       <span routerLink="/" style="display: flex; align-items: center;">
-        <img src="assets/images/healthhack.png" alt="Rutgers Health Hack" class="titlebutton" />
-        <span style="font-size: 1.5rem; margin-left: 10px;">October 25-27, 2024</span>
+        <img src="assets/images/healthhack2.jpeg" alt="Rutgers Health Hack" class="titlebutton" />
+        <span class="date-text" style="font-size: 1.5rem; margin-left: 10px;">October 10-12, 2025</span>
       </span>
+      
 
       <span class="fill-space" *ngIf="!showSidenavButton"></span>
       
       <div *ngIf="!showSidenavButton" class="buttons-container">
+        <a mat-button class="buttons" routerLink="/home">Home</a>
         <a mat-button class="buttons" routerLink="/brochure">Event Details</a>
         <a mat-button class="buttons" routerLink="/leadership">Leadership</a>
-        <a mat-button class="buttons" routerLink="" fragment="testimonials-section">Testimonials</a>
-        <a mat-button class="buttons" routerLink="" fragment="themes-section">Themes</a>
-        <a mat-button class="buttons" routerLink="">Contact Us</a>
-        <a mat-button class="register-button" routerLink="/register">Register Now</a>
-      </div>
+        <!-- <a mat-button class="buttons" routerLink="" fragment="themes-section">Themes</a> -->
+        <a mat-button class="buttons" routerLink="/mentors">Mentors</a>
+        <a mat-button class="buttons" routerLink="/resources">Resources</a>
+        <a mat-button class="buttons" routerLink="/faq">FAQs</a>
+
+        <!-- <a mat-button class="buttons" routerLink="/contactus">Contact Us</a> -->
+      <!-- <a mat-button class="register-button" routerLink="/portal">
+        <div class="register-content">
+          <app-register-cta></app-register-cta>
+          <span class="default-text">Register Now</span>
+          <span class="hover-text">Click Here!</span>
+        </div>
+      </a> -->
+              </div>
       
     </mat-toolbar>
 

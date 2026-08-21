@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { Auth } from '@angular/fire/auth';
 
+
 @Component({
   selector: 'app-shell',
   templateUrl: './shell.component.html',

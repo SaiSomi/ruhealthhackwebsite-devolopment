@@ -1,11 +1,26 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 
+
 @Component({
   selector: 'app-brochure',
   templateUrl: './brochure.component.html',
   styleUrls: ['./brochure.component.scss']
 })
 export class BrochureComponent implements OnInit {
+  images = [
+    'assets/images/1A.jpg', // Replace with actual image paths
+    'assets/images/1B.jpg'  // Replace with actual image paths
+  ];
+  currentIndex = 0;
+  currentImage = this.images[this.currentIndex];
+
+
+
+  nextImage(): void {
+    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+    this.currentImage = this.images[this.currentIndex];
+  }
+  
 
   constructor(private renderer: Renderer2) { }
 

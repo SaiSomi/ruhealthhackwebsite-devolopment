@@ -22,6 +22,8 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/router": "^16.2.0",
     "@angular/youtube-player": "^16.2.11",
+    "@asymmetrik/ngx-leaflet": "^18.0.1",
+    "leaflet": "^1.9.4",
     "ng-mat-carousel": "^0.11.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

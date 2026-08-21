@@ -1,0 +1,8 @@
+<a mat-button class="register-button" routerLink="/portal">
+  <span *ngIf="timeLeftMs > 0" class="countdown-text">
+    {{ dd }}d {{ hh }}h {{ mm }}m {{ ss }}s
+  </span>
+  <span *ngIf="timeLeftMs <= 0" class="live-text">
+    We’re live! Click to register
+  </span>
+</a>

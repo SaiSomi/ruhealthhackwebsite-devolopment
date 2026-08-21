@@ -17,7 +17,7 @@ export class AuthComponent {
   type: 'login' | 'signup' | 'reset' = 'login';
   loading = false;
   serverMessage: string;
-  closed=true;
+  closed=false;
 
   private readonly userDisposable: Subscription|undefined;
   public readonly user: Observable<User | null> = EMPTY;

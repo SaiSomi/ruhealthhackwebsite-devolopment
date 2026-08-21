@@ -1,31 +1,68 @@
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  max-width: 100%; /* Ensure the content doesn't exceed the screen width */
+  margin: 0;
+  padding: 0;
+}
+
 #video-background-container {
-    position: relative;
-    width: 100%;
-    height: 80vh; /* Adjust this height based on how much space you want the video to occupy */
-    overflow: hidden;
-    z-index: 1; /* Ensures video stays behind content */
+  position: relative;
+  width: 100%;
+  height: 80vh; /* Adjust this height for desktop view */
+  overflow: hidden;
+  z-index: 1; /* Ensures video stays behind content */
+  background-color: white;
+}
+
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the container fully */
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Keeps video behind other content */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Additional styles to handle responsiveness */
+@media (max-width: 768px) {
+  #video-background-container {
+      height: 60vh; /* Reduce the height for smaller screens */
+  }
+
+  #background-video {
+      object-fit: contain; /* Maintain aspect ratio and ensure full video is visible */
+      width: 100%;
+      height: auto;
+      transform: translate(-50%, -50%); /* Keep the video centered */
+  }
+}
+
+@media (max-width: 480px) {
+  #video-background-container {
+      height: 50vh; /* Further reduce the height for very small screens */
   }
   
   #background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    z-index: -1; /* Keeps video behind other content */
+      object-fit: contain; /* Ensure the entire video is visible */
+      width: 100%;
+      height: auto;
+      transform: translate(-50%, -50%); /* Keep the video centered */
   }
-  
+}
 
-    .advertisement-section {
+
+
+    .sponsor-section {
         position: relative;
         background-color: #f5f5f5; /* Light gray background */
         padding: 50px 20px;
         text-align: center;
         z-index: 2; /* Ensure content is above the triangle */
-        overflow: hidden;
+        overflow: visible;
     }
 
     .triangle-container {
@@ -86,11 +123,56 @@
     position: relative;
     z-index: 1;
   }
+  .leader-section {
+    background-color: crimson;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.leader-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.leader-videos {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px; /* Add space between the videos */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 560px; /* Limit the maximum width */
+    margin-bottom: 30px;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 315px; /* Set height to maintain 16:9 ratio */
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container {
+        max-width: 100%;
+    }
+}
+
+
+
 
   
-
-  
-  .advertisement-content {
+  .sponsor-content {
     max-width: 900px;
     margin: 0 auto;
     position: relative;
@@ -108,31 +190,30 @@
     margin-bottom: 40px;
   }
   
-  .sponsors-section {
+.sponsors-section {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Center all logos as a group */
     align-items: center;
+    gap: 40px; /* Equal space between logos */
     margin-bottom: 40px;
-    flex-wrap: wrap; /* Allow wrapping */
-    overflow: hidden;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .sponsor-item {
-    flex: 1 1 100%; /* Make each logo take up full width on small screens */
-    max-width: 200px; /* Set a maximum width for each logo */
+    flex: 0 1 150px; /* Allow shrink, set base size */
+    max-width: 180px; /* Prevent very large logos */
     text-align: center;
-    margin: 10px 0; /* Space between stacked logos */
 }
 
 .sponsor-logo {
     width: 100%;
     height: auto;
-    max-width: 200px;
+    max-width: 160px; /* Keep consistent logo sizing */
     transition: transform 0.3s ease;
 }
 
 .sponsor-logo:hover {
-    transform: scale(1.3); /* Slight zoom on hover */
+    transform: scale(1.1); /* Nice hover effect */
 }
 
 @media (min-width: 768px) {
@@ -155,18 +236,36 @@
     background-color: white;
     color: black;
     padding: 10px 30px;
-    margin-right: auto; /* Align to the left */
-    margin-left: auto; /* Small margin from the edge */
-    transition: background-color 0.3s ease;
-    text-decoration: none; /* Ensure no underline */
-    border: 3px solid #d11c34; /* Remove any border if present */
+    margin-right: auto;
+    margin-left: auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    border: 3px solid #d11c34;
+    position: relative;
   }
-  
+
+  .register-button .hover-text {
+    display: none;
+  }
+
+  .register-button .default-text {
+    display: inline;
+  }
+
   .register-button:hover {
     background-color: #d11c34; /* Rutgers Red */
     color: white;
     border-color: #d11c34;
   }
+
+  .register-button:hover .hover-text {
+    display: inline;
+  }
+
+  .register-button:hover .default-text {
+    display: none;
+  }
+
   
   .theme-header h2 {
     font-size: 28px;
@@ -377,17 +476,27 @@
   }
   
   .carousel-controls button {
-    background-color: crimson;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Saira Condensed', sans-serif;
+    background-color: white;
+    color: black;
+    padding: 10px 30px;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    border: 3px solid #d11c34;
     cursor: pointer;
-    transition: background-color 0.3s ease;
   }
   
   .carousel-controls button:hover {
-    background-color: darkred;
+    background-color: #d11c34; /* Rutgers Red */
+    color: white;
+    border-color: #d11c34;
+  }
+  
+  .carousel-controls button:focus {
+    outline: none; /* Remove default focus outline */
   }
   
   /* Media Queries for Responsiveness */
@@ -438,21 +547,23 @@
 }
 
 .theme-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    overflow: hidden;
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: center; /* Center align the items on the page */
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .theme-item {
-    position: relative;
-    width: 25%; /* Each item takes up 25% of the container width */
-    overflow: hidden;
-    transition: transform 0.3s ease;
+  position: relative;
+  width: 25%; /* Each item takes up 25% of the container width on large screens */
+  overflow: hidden;
+  transition: transform 0.3s ease;
 }
 
 .theme-item:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
 }
 
 .theme-image {
@@ -496,21 +607,37 @@
 }
 
 @media (max-width: 768px) {
-    .theme-item {
-        width: 50%; /* Two items per row on medium screens */
-    }
+  .theme-item {
+      width: 50%; /* Two items per row on medium screens */
+  }
+  .advertisement-content h1 {
+    font-size: 28px; /* Adjust font size for smaller screens */
+  }
+
+  .advertisement-content p {
+      font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+    .theme-text h3 {
+      font-size: 24px; /* Adjust title size for smaller screens */
+  }
+
+  .theme-text p {
+      font-size: 18px; /* Adjust description size for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
-    .theme-item {
-        width: 100%; /* One item per row on small screens */
-    }
+  .theme-item {
+      width: 100%; /* One item per row on small screens */
+      margin-bottom: 20px; /* Add space between stacked items */
+  }
 }
 
 
 .producer-tag {
     width: 100%; /* Full width */
-    background-color: crimson; /* Red background */
+    background-color: black; /* Red background */
     color: white; /* White text */
     display: flex;
     align-items: center;
@@ -534,3 +661,399 @@
     font-weight: bold;
   }
   
+
+  .container, .container2, .container3, .theme-container, .testimonials-container, .carousel-controls {
+    width: 100%;
+    padding: 0 15px; /* Add padding to prevent content from touching the edges */
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+}
+
+.financial-sponsors-section {
+  background-color: white;
+  padding: 30px 30px; /* Reduced padding from top */
+  text-align: center;
+}
+
+.financial-sponsors-header {
+  font-size: 40px; /* Keep the large font size */
+  font-weight: bold;
+  margin-bottom: 30px; /* Adjust bottom margin to reduce gap */
+  margin-top: 10px; /* Reduced top margin */
+  color: black;
+}
+
+.financial-sponsors-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
+  gap: 30px; /* Space between logos */
+}
+
+.financial-sponsor-item {
+  flex: 1 1 200px; /* Minimum width for logos */
+  max-width: 250px; /* Max width */
+  text-align: center;
+}
+
+.financial-sponsor-logo {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.financial-sponsor-logo:hover {
+  transform: scale(1.15); /* Slight zoom on hover */
+}
+
+@media (max-width: 768px) {
+  .financial-sponsor-item {
+    flex: 1 1 180px; /* Adjust size on smaller screens */
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .financial-sponsors-container {
+    justify-content: center; /* Center logos on very small screens */
+  }
+
+  .financial-sponsor-item {
+    flex: 1 1 100%; /* Full width logos stacked */
+    max-width: 250px; /* Max width on small screens */
+  }
+}
+
+.new-sponsor-image {
+  text-align: center;
+  margin-top: 20px; /* Add some space between the sponsors and the new image */
+}
+
+.new-sponsor-logo {
+  width: 100%;
+  max-width: 300px; /* Set a max width to control the image size */
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.new-sponsor-logo:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+}
+
+@media (max-width: 768px) {
+  .new-sponsor-logo {
+      max-width: 200px; /* Adjust image size for mobile view */
+  }
+}
+.collaborators-section {
+  background-color: white; /* Light gray background */
+  padding: 30px 30px;
+  text-align: center;
+}
+
+.collaborators-header {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  color: black;
+}
+
+.collaborators-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* Allows logos to wrap on smaller screens */
+  gap: 30px; /* Space between logos */
+}
+
+.collaborator-item {
+  flex: 1 1 200px; /* Minimum width for logos */
+  max-width: 250px; /* Max width */
+  text-align: center;
+}
+
+.collaborator-logo {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.collaborator-logo:hover {
+  transform: scale(1.15); /* Slight zoom on hover */
+}
+
+@media (max-width: 768px) {
+  .collaborator-item {
+    flex: 1 1 180px; /* Adjust size on smaller screens */
+    max-width: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .collaborators-container {
+    justify-content: center; /* Center logos on very small screens */
+  }
+
+  .collaborator-item {
+    flex: 1 1 100%; /* Full width logos stacked */
+    max-width: 250px; /* Max width on small screens */
+  }
+}
+.keynote-container {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.keynote-card {
+  width: 92%;
+  max-width: 1100px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(16, 24, 40, 0.12);
+  overflow: hidden;
+}
+
+/* subtle scarlet corner accents (top-left & bottom-right) */
+.scarlet-corners {
+  position: relative;
+  background-image:
+    linear-gradient(#d11c34, #d11c34),
+    linear-gradient(#d11c34, #d11c34);
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+  background-size: 72px 6px, 72px 6px; /* length × thickness */
+}
+
+/* content layout */
+.keynote-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  padding: 28px;
+  align-items: start;
+}
+
+/* image column with strict sizing so portraits always look clean */
+.keynote-image-wrap {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 3 / 4;          /* keeps the frame consistent */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  background: #f3f4f6;          /* soft fallback while loading */
+}
+
+.keynote-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;            /* fills the frame without distortion */
+  object-position: center;      /* centers face nicely */
+  display: block;
+}
+
+/* text styles */
+.keynote-header {
+  color: #d11c34;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 4px 0 14px;
+}
+
+.keynote-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: #1f2937;
+}
+
+.keynote-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 16px;
+  color: #4b5563;
+}
+
+.keynote-bio {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #374151;
+  margin: 0 0 14px;
+}
+
+/* responsive */
+@media (max-width: 860px) {
+  .keynote-content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: left;           /* keep professional left alignment */
+  }
+  .keynote-image-wrap {
+    max-width: 220px;
+    margin-bottom: 6px;
+  }
+  .keynote-header { font-size: 24px; }
+}
+
+
+
+
+/* --- Tracks Section --- */
+.tracks-section {
+  padding: clamp(40px, 6vw, 72px) 20px;
+  background: #fafafa;
+}
+
+.theme-header {
+  text-align: center;
+  margin: 0 auto clamp(24px, 3vw, 36px);
+  max-width: 900px;
+}
+
+.theme-header .headline {
+  font-size: clamp(32px, 4.2vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px 0;
+}
+
+.theme-header .tagline {
+  font-size: clamp(16px, 1.4vw, 20px);
+  color: #555;
+  margin: 0;
+}
+
+/* --- Grid --- */
+.tracks-grid {
+  display: grid;
+  gap: clamp(16px, 2vw, 24px);
+  grid-template-columns: 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (min-width: 760px) {
+  .tracks-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* --- Card --- */
+.track-card {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+  outline: none;
+}
+.track-card:hover,
+.track-card:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.12);
+}
+
+/* subtle interactive ring */
+.focus-ring {
+  pointer-events: none;
+  position: absolute;
+  inset: -1px;
+  border-radius: 20px;
+  background: radial-gradient(120px 80px at 20% 10%, rgba(211,47,47,.08), transparent 70%),
+              radial-gradient(140px 100px at 80% 0%, rgba(211,47,47,.1), transparent 70%);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.track-card:hover .focus-ring,
+.track-card:focus .focus-ring { opacity: 1; }
+
+/* --- Media / logos --- */
+.track-media {
+  background: linear-gradient(180deg, #f8f8f8 0%, #f2f2f2 100%);
+  display: grid;
+  place-items: center;
+  padding: clamp(28px, 4vw, 40px);
+  min-height: 180px;
+}
+.track-logo {
+  max-width: 68%;
+  max-height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,.06));
+}
+
+/* --- Body --- */
+.track-body {
+  padding: 18px 20px 12px 20px;
+}
+.track-title {
+  margin: 0 0 6px 0;
+  font-size: clamp(18px, 1.6vw, 22px);
+  font-weight: 800;
+  color: #222;
+}
+.track-desc {
+  margin: 0;
+  color: #555;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+/* --- Footer reveal --- */
+.track-footer {
+  padding: 12px 20px 18px 20px;
+  font-size: 13px;
+  letter-spacing: .2px;
+  color: #d32f2f;
+  font-weight: 700;
+  opacity: .0;
+  transform: translateY(6px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+.track-card:hover .track-footer,
+.track-card:focus .track-footer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Force 4 cards per row on desktop === */
+@media (min-width: 1100px) {
+  .tracks-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 1320px; /* widen if your page can; or keep 1200 if you prefer */
+  }
+}
+
+/* === Make all cards equal height and keep footer at bottom === */
+.tracks-grid .track-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;              /* no extra margins so grid spacing controls gaps */
+  height: 100%;
+}
+.tracks-grid .track-body { flex: 1; }  /* fills vertical space */
+
+/* (Optional) slightly shorter banner so 4-up feels tighter */
+@media (min-width: 1100px) {
+  .track-media { min-height: 150px; }
+}
+
+/* 1) Desktop grid a bit tighter */
+@media (min-width: 1100px) {
+  .tracks-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 1280px;   /* was 1320px */
+    gap: 16px;           /* was 24px-ish */
+  }
+}
+
+/* 2) Shorter banner + consistent logo sizing */
+@media (min-width: 1100px) {
+  .tracks-grid .track-logo {
+    height: clamp(72px, 8vw, 110px); /* grows with screen, tops out ~110px */
+    max-width: 240px;
+    width: auto;
+  }
+  .track-media { min-height: 170px; }  /* room so they don't feel cramped */
+}

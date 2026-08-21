@@ -1,54 +1,7 @@
+/* Style for the overall container */
 .brochure-content {
   text-align: center;
   padding: 20px;
-}
-
-.timer-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  max-width: 800px; /* Limit the width for better alignment */
-  margin: 0 auto;
-}
-
-.timer-container {
-  background-color: transparent; /* Keep the background transparent */
-  border: 3px solid #d11c34;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  max-width: 100%;
-}
-
-.timer-container h4 {
-  font-size: 24px;
-  font-weight: bold;
-  color: #d11c34;
-  margin-bottom: 20px;
-}
-
-.countdown-timer {
-  font-size: 48px;
-  color: #333;
-  font-weight: bold;
-}
-
-.register-button {
-  background-color: #d11c34;
-  color: white;
-  padding: 20px 80px; /* Keep the padding for the larger button */
-  border-radius: 10px;
-  border: none;
-  font-size: 24px; /* Larger font size */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin-top: 10px; /* Reduce the margin to decrease the gap */
-}
-
-.register-button:hover {
-  background-color: #b00f2e;
 }
 
 .details-page {
@@ -57,61 +10,523 @@
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  padding-left: 40px; /* Adds left padding to prevent flush with the edge */
+  padding-right: 40px; /* Ensures equal padding on both sides */
 }
 
-.event-info h2, .event-info h3 {
+/* Main container */
+.about-timer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Timer and image section */
+.timer-image-container {
+  display: flex;
+  justify-content: flex-start; /* Move image and timer closer */
+  gap: 10px; /* Reduce the gap between timer and image */
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.timer-container {
+  background-color: transparent;
+  border: 2px solid #d11c34;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  max-width: 45%;
+  font-size: 36px;
+}
+
+.timer-container h4 {
+  font-size: 28px;
+  font-weight: bold;
   color: #d11c34;
+}
+
+.countdown-timer {
+  font-size: 48px;
+  color: #333;
   font-weight: bold;
 }
 
-.event-info h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
+.image-container {
+  max-width: 40%;
+  margin-left: 0px; /* Move image closer to the countdown timer */
 }
 
-.event-info h3 {
-  margin-top: 40px;
-  font-size: 22px;
-}
-
-.event-info p {
-  font-size: 16px;
-  color: #555;
-  margin-bottom: 20px;
-}
-
-.event-info ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  color: #333;
-}
-
-.workflow {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.workflow-image {
-  max-width: 100%;
-  margin-top: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.event-image {
+  width: 100%;
+  height: auto;
   border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.logistics {
+/* About content */
+.about-content {
+  text-align: left;
+  padding: 20px;
+  max-width: 1000px;
+  margin-left: 0;
+}
+
+.about-content h2 {
+  font-size: 40px;
+  color: crimson;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.about-content p {
+  font-size: 20px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+/* Card & header */
+.schedule-card {
+  width: 92%;
+  max-width: 900px;
+  margin: 24px auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(16,24,40,0.12);
+  padding: 24px 28px 30px;
+}
+
+/* Scarlet top-left and bottom-right accent bars */
+.scarlet-corners {
+  background-image:
+    linear-gradient(#d11c34, #d11c34),
+    linear-gradient(#d11c34, #d11c34);
+  background-repeat: no-repeat;
+  background-position: top left, bottom right;
+  background-size: 80px 6px, 80px 6px;
+}
+/* === Center alignment overrides === */
+
+/* Center the top "Schedule" title and each day header */
+.schedule-title,
+.day-title {
   text-align: center;
+}
+
+/* Keep the events list narrow and centered under each header */
+.events {
+  max-width: 700px;          /* tweak 600–760px to taste */
+  margin: 0 auto 12px;       /* centers the block */
+  padding-left: 0;           /* no indent */
+  text-align: center;        /* center text by default */
+}
+
+/* Center each event’s content */
+.event {
+  display: grid;
+  grid-template-columns: 120px 1fr;  /* time | details */
+  justify-items: center;             /* center both columns */
+  gap: 16px;
+  padding: 10px 0;
+  /* If you used a timeline line/dots earlier, hide them for clean centering: */
+  position: static;
+}
+.events::before,
+.event::before { display: none; }
+
+/* Center text inside both columns */
+.time,
+.detail,
+.detail .title,
+.location,
+.note { text-align: center; }
+
+/* Optional: slightly bolder time to anchor the line */
+.time { font-weight: 700; }
+
+/* Mobile tightening */
+@media (max-width: 640px) {
+  .events { max-width: 100%; }
+  .event { grid-template-columns: 100px 1fr; }
+}
+
+
+.schedule-title {
+  margin: 6px 0 14px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #111827;
+}
+
+/* Day headers */
+.day-title {
+  margin: 22px 0 8px;
+  color: #d11c34;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+/* Timeline list */
+.events {
+  list-style: none;
+  margin: 0 0 8px 0;
+  padding: 8px 0 8px 16px;
+  position: relative;
+}
+
+/* vertical line */
+.events::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0px;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(#d11c34, #e5e7eb);
+  border-radius: 2px;
+}
+
+/* individual event */
+.event {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 12px 0 12px 0;
+  position: relative;
+}
+
+/* dot */
+.event::before {
+  content: "";
+  position: absolute;
+  left: -6px; /* align with line */
+  top: 22px;
+  width: 10px;
+  height: 10px;
+  background: #d11c34;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(209,28,52,0.12);
+}
+
+.time {
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.detail .title {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.location {
+  color: #4b5563;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+.note {
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+/* Tidy spacing between day groups */
+.events + .day-title { margin-top: 18px; }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .schedule-card { padding: 20px; }
+  .event { grid-template-columns: 100px 1fr; gap: 12px; }
+  .schedule-title { font-size: 24px; }
+  .day-title { font-size: 18px; }
+}
+
+
+/* Schedule of events alignment */
+.schedule-header {
+  text-align: left;
+}
+
+.schedule-event {
+  text-align: left;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.schedule-event strong {
+  font-weight: bold;
+  color: #d11c34;
+}
+
+/* List styles */
+ul {
+  list-style-type: none; /* Removes bullet points */
+  padding-left: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* What to Expect section */
+.expect-section {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.expect-section h3 {
+  font-size: 32px;
+  color: crimson;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.expect-section p,
+.expect-section ul {
+  font-size: 18px;
+  color: #333;
+  line-height: 2.0;
+}
+
+.expect-section p strong {
+  font-weight: bold;
+}
+
+.expect-highlight {
+  font-weight: bold;
+  color: crimson;
+}
+
+/* Carousel styles */
+.carousel-container {
+  position: relative;
+  display: inline-block;
   margin-top: 40px;
+}
+
+.carousel-image {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-arrow {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: crimson;
+  border: none;
+  color: white;
+  font-size: 32px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  background-color: #b00f2e;
+}
+
+/* Logistics Section */
+.logistics {
+  text-align: left;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .timer-image-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .timer-container, .image-container {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .details-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .countdown-timer {
+    font-size: 36px;
+  }
+
+  .timer-container h4 {
+    font-size: 24px;
+  }
+}
+.images-container {
+  display: flex;
+  justify-content: space-between; /* Space between the two images */
+  margin-top: 50px; /* Adds some space between the images and the section above */
+}
+
+.side-image {
+  width: 48%; /* Adjust the size of the images, you can change it according to your needs */
+  height: auto;
+  border-radius: 8px; /* Optional: To add rounded corners to your images */
+}
+.hotel-cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Allow the cards to wrap on smaller screens */
+}
+
+.hotel-card {
+  width: 25%; /* Default width for larger screens */
+  border: 2px solid crimson; /* Red outline */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px; /* Uniform card height */
+  padding: 20px;
+}
+
+.hotel-card:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hotel-card-header {
+  padding: 10px;
+}
+
+.mat-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.mat-card-content p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.book-now-button {
+  background-color: crimson;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  height: 40px; /* Set a fixed height for buttons */
+  align-items: center; /* Align text vertically in the center */
+}
+
+.book-now-button:hover {
+  background-color: darkred;
+}
+
+.mat-card-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  align-items: flex-end;
+  margin-top: auto; /* Push the button to the bottom */
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+  .hotel-card {
+    width: 100%; /* Make each card take up full width on mobile */
+    margin-bottom: 20px; /* Add spacing between stacked cards */
+    height: auto; /* Remove fixed height to allow for flexible content sizing */
+  }
+
+  .hotel-cards-container {
+    justify-content: center; /* Center the cards on smaller screens */
+    gap: 10px; /* Reduce gap on smaller screens */
+  }
+
+  .book-now-button {
+    height: 50px; /* Increase button height slightly for easier tap on mobile */
+  }
+}
+/* Keynote section */
+.keynote-container {
+  display: flex;
+  justify-content: flex-start; /* Align the card to the left */
+  margin: 20px 0;
+}
+
+.keynote-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centers content vertically */
+  width: 80%; /* Adjust width if necessary */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.keynote-image-container {
+  flex: 1;
+  display: flex;
+  align-items: center; /* Vertically center image */
+  justify-content: center; /* Horizontally center image */
+}
+
+.keynote-image {
+  width: 100%;
+  height: auto;
+}
+
+mat-card-content {
+  flex: 2;
+  padding: 20px;
+  text-align: left; /* Align the content (paragraph) to the left */
+}
+
+.keynote-header {
+  color: #d11c34; /* Red color for Keynote Speaker header */
+  font-size: 24px; /* Adjust the size of the header as necessary */
+  margin-bottom: 10px; /* Decrease the bottom margin to reduce gap */
+}
+
+.keynote-position {
+  margin-bottom: 5px; /* Decrease gap between position and name */
+  font-weight: bold;
+}
+
+.keynote-details p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 10px; /* Adjust margin to reduce gap */
+}
+
+h3 {
+  margin-bottom: 10px; /* Decrease gap between h3 tags */
 }
 
 @media (max-width: 768px) {
-  .timer-wrapper {
-    width: 100%;
+  .keynote-card {
+      flex-direction: column;
+      width: 100%; /* Full width on mobile */
   }
-
-  .register-button {
-    width: 100%;
-    text-align: center;
+  .keynote-image {
+      width: 100%;
+      height: auto;
   }
 }
+
+
+

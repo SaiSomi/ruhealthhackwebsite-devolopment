@@ -1,0 +1,10 @@
+:host {
+  display: inline-flex;      /* so it sits nicely inside the button */
+  align-items: center;
+}
+
+.countdown-text {
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  font-weight: 600;
+}

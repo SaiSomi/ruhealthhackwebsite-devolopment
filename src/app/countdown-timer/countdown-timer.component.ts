@@ -11,7 +11,7 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
   public countdown: string;
   
   // Set the target date and time
-  private targetDate = new Date('Sep 30, 2024 23:59:59').getTime();
+  private targetDate = new Date('Oct 25, 2024 17:30:00').getTime();
 
   ngOnInit(): void {
     // Update the countdown every second
